@@ -1,0 +1,64 @@
+body{
+  margin:0;
+  font-family:sans-serif;
+  color:#FFF;
+  overflow-x:hidden;
+  background:linear-gradient(120deg,#000 0%,#111 50%,#000 100%);
+  background-size:400% 400%;
+  animation:gradientShift 30s ease infinite;
+}
+@keyframes gradientShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.hero{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  gap:1.5rem;
+  padding:2rem 1rem;
+  text-align:center;
+}
+.hero h1{
+  font-size:3rem;
+  font-weight:bold;
+}
+.hero p{
+  font-size:1.5rem;
+}
+.section{
+  max-width:1000px;
+  margin:0 auto;
+  padding:4rem 1rem;
+  text-align:left;
+}
+.section h2{
+  font-size:2.5rem;
+  font-weight:bold;
+  margin-bottom:1.5rem;
+}
+.section p{
+  font-size:1.125rem;
+  line-height:1.8;
+  text-align:left;
+}
+a{
+  color:#FFF;
+  text-decoration:none;
+  transition:transform .3s ease,color .3s ease;
+}
+a:hover{
+  color:#000;
+  background:#FFF;
+  transform:scale(1.05);
+}
+.fade-slide{opacity:0;transform:translateY(20px);animation:fadeSlideUp .8s cubic-bezier(.4,0,.2,1) forwards}
+.fade-slide-delay-1{animation-delay:.2s}
+.fade-slide-delay-2{animation-delay:.4s}
+.fade-slide-delay-3{animation-delay:.6s}
+@keyframes fadeSlideUp{to{opacity:1;transform:translateY(0)}}
+.pulse:hover{animation:pulse 1.2s infinite cubic-bezier(.4,0,.2,1)}
+@keyframes pulse{0%,100%{transform:scale(1.08)}50%{transform:scale(1)}}
